@@ -4,13 +4,11 @@ const userSchema = new mongoose.Schema({
     fullName: {
         type: String,
         required: true,
-        unique: true,
         minlength: 3,
     },
     userName: {
         type: String,
         required: true,
-        unique: true,
         minlength: 3,
     },
     password: {
@@ -18,11 +16,11 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique : true,
     },
-    confirmPassword: {
-        type: String,
-        // required: true,
-        unique : true,
-    },        
+    // confirmPassword: {
+    //     type: String,
+    //     required: true,
+    //     unique : true,
+    // },        
     gender: {
         type: String,
         required: true,
@@ -33,7 +31,8 @@ const userSchema = new mongoose.Schema({
         type : String,
         default : "",
     }
-})          // This is the schema for the User model. It has a username, passwordHash, and an array of blogs. The blogs array is an array of ObjectIds that reference the Blog model.
+},{timestamps : true})      //this will automatically create the fields createdAt and updatedAt
+// This is the schema for the User model. It has a username, passwordHash, and an array of blogs. The blogs array is an array of ObjectIds that reference the Blog model.
 
 const User = mongoose.model("User", userSchema) // This is the User model. It is a model for the User schema.
 
