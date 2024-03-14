@@ -36,7 +36,7 @@ export const signup = async (req, res) => {
          generateToken(newUser._id, res);
       await newUser.save();
       res.status(201).json({
-        _id: newUser._id,
+        _id: newUser._id,  //sending the user id to the frontend
         fullName: newUser.fullName,
         userName: newUser.userName,
         profilePic: newUser.profilePic,

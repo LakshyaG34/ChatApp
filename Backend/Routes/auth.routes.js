@@ -3,9 +3,9 @@ import { login, signup, logout } from "../Controllers/auth.controller.js";
 
 const router = express.Router();
 
-// Add a GET route for /login
-router.get("/login", login);
-router.get("/signup", signup);
-router.get("/logout", logout);
+// Add a post route for /login
+router.post("/login", login);
+router.post("/signup", signup);
+router.post("/logout", logout);
 
 export default router;
